@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./style.css">
     <script src="./js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
     <title>Document</title>
 </head>
 <body>
     <header role="header">        
-        <nav class="navbar navbar-dark bg-dark">
+          <nav class="navbar navbar-dark bg-dark container-sm container-md d-lg-none d-xxl-none">
             <div class="container-fluid">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="toggler-icon top-bar"></span>
@@ -21,7 +22,7 @@
               <div class="collapse" id="navbarToggleExternalContent">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Fotos</a>
+                    <a class="nav-link" href="#fotos">Fotos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#video">Video</a>
@@ -42,15 +43,53 @@
               </div>
           </nav>
 
-          <div class="card text-bg-dark">
-            <div class="gradient">
-            <img src="./png/Das-bin-ich.png" class="card-img border-image" alt="Das-bin-ich">
+          <div class="card text-bg-dark d-lg-none d-xxl-none">
+            <div class="container-gradient">
+            <div class="gradient"> </div>
+            <img src="./png/Das-bin-ich.png" class="card-img border-image" alt= "Das-bin-ich">
             </div>
             <div class="card-img-overlay">
               <p class="card-text">Moin, zwischen den wilden Multimedia Mainstreams befinde ich mich amliebsten im Urbanen vierteln. Sie geben mir einen nostalgischen Vibe. Vielleicht tun sie es ja auch für dich, schau doch mal rein. </p>
               <p class="card-text"><small>- Lea</small></p>
-            </div>
           </div>
     </header>
+    <main>
+      <div class="container-sm container-xxl container-xl container-lg container-md">
+        <p name="fotos" class="container-sm h3">Fotos</p>
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card card-modify text-bg-dark">
+                <div class="img-wrapper">        
+                   <img src="./png/Das-bin-ich.jpg" class="card-img" alt="...">
+                </div>
+                  </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card card-modify text-bg-dark">
+                      <div class="img-wrapper">        
+                   <img src="./png/Das-bin-ich.jpg" class="card-img" alt="...">
+                      </div>
+                  </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card card-modify text-bg-dark">
+                        <div class="img-wrapper">
+                   <img src="./png/Das-bin-ich.jpg" class="card-img" alt="...">
+                        </div>
+                  </div>
+                </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </main>
 </body>
 </html>
