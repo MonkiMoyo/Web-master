@@ -1,0 +1,136 @@
+:root {
+   --primary-color: rgb(0, 0, 0); 
+   --secondary-color: rgb(255, 230, 0);
+   --active-color: rgb(255, 255, 255);
+}
+
+.navbar>.container, .navbar>.container-fluid, 
+.navbar>.container-lg, .navbar>.container-md, 
+.navbar>.container-sm, .navbar>.container-xl, 
+.navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar-dark, .navbar[data-bs-theme=dark] {
+    --bs-navbar-color: var(--primary-color);
+    --bs-navbar-hover-color: var(--primary-color);
+    --bs-navbar-active-color: #fff;
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: #fff;
+    --bs-navbar-toggler-border-color: var(--secondary-color);
+
+}
+.navbar-toggler{
+    background-color: var(--secondary-color);
+    border-radius: 0;
+    height: 40px;
+    width: 50px;
+    align-items: center;
+}
+
+
+.nav-link {
+    color: var(--secondary-color);
+    line-height: 1.5em;
+    transition: none;
+}
+.nav-link:active {
+    color: var(--active-color);
+}
+
+.nav-link:hover {
+    color: var(--active-color);
+}
+
+.font-footer-size{
+    font-size: 0.9rem;
+    line-height: 0.5em;
+}
+
+
+.navbar-toggler {
+    border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    display: block;
+    transition: all 0.2s;
+}
+
+.middle-bar{
+    margin: 5px auto;
+}
+
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 25% 5%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 25% 5%;
+}
+
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: var(--primary-color);
+}
+
+
+body{
+    background-color: var(--primary-color);
+}
+
+.border-image{
+    border-bottom: solid 2px var(--secondary-color);
+    border-top: solid 2px var(--secondary-color);
+    
+}
+
+
+.card-text{
+    color: var(--primary-color);
+    align-items: end;
+}
+
+p{
+    font-size: 12px;
+}
+
+.gradient{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 100%);
+    z-index: 0;
+}
+
