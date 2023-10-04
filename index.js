@@ -11,6 +11,7 @@ let firstImgWidth = firstImg.clientWidth + 14;
 arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+        
     });
 });
 
@@ -45,10 +46,20 @@ carousel.addEventListener("mouseup", dragStop);
 carousel.addEventListener("mouseleave", dragStop);
 carousel.addEventListener("touchend", dragStop);
 
+const imgELs = document.querySelectorAll('.none-active');
+const changeImg = document.querySelectorAll('.controls');
 
-function changeClass()
-{
-    carousel.querySelectorAll(".active").className = "none-active";
-    carousel.querySelector(".none-active").className = "active";
+    imgELs.forEach(imgELs => {
+    imgELs.addEventListener('click', () => {
+    document.querySelector('.active')?.classList.remove('active');
+    imgELs.classList.add('active')   
+   });
+}); 
 
-}
+const buttonAdd = document.querySelector('.controls');
+buttonAdd.addEventListener('click', addClass);
+
+function addClass(){
+    const element = document.querySelectorAll('none-active');
+    element.classList.add('active');
+  }

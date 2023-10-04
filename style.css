@@ -224,23 +224,10 @@ p{
     z-index: 1;
 }
 
-
-@supports (filter: blur(8px)) {
-    .wrapper:hover .none-active {
-      filter: blur(8px);
-    }
-    .wrapper .none-active:hover {
-      filter: blur(0px);
-    }
-  }
-
-.button {
-    display: none;
+.none-active{
+    filter: blur(5px);
 }
 
-.active:hover + .button, .button:hover{
-    filter: blur(2px);
-   
+.active{
+    filter: blur(0px);
 }
-
-
