@@ -56,10 +56,4 @@ const changeImg = document.querySelectorAll('.controls');
    });
 }); 
 
-const buttonAdd = document.querySelector('.controls');
-buttonAdd.addEventListener('click', addClass);
 
-function addClass(){
-    const element = document.querySelectorAll('none-active');
-    element.classList.add('active');
-  }

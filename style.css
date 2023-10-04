@@ -148,6 +148,7 @@ p{
 
 .h3{
     color: var(--secondary-color);
+    margin: 2rem  0 2rem 0 ;
 }
 
 
@@ -231,3 +232,7 @@ p{
 .active{
     filter: blur(0px);
 }
+
+
+
+
