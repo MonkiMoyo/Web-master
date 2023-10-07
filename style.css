@@ -230,9 +230,21 @@ p{
 }
 
 .active{
-    filter: blur(0px);
+    filter: none;
+}
+
+
+#illustrationen, #video, #fotos, #graffiti {
+    scroll-behavior: smooth;
 }
 
 
 
+.active:hover{
+    background: center / contain no-repeat url(./png/CTA.png);
+}
 
+
+.none-active:hover{
+    filter: blur(0px);
+}

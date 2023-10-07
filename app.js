@@ -98,3 +98,62 @@ slider2.imgELs.forEach(imgELs => {
     imgELs.classList.add('active')   
 });
 }); 
+const sliderParent3 = document.getElementById("sliderParent3")
+const slider3 = new Slider(sliderParent3)
+
+slider3.arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        slider3.carousel.scrollLeft += icon.id == "left" ? -slider3.firstImgWidth : slider3.firstImgWidth;
+        
+    });
+});
+
+
+slider3.carousel.addEventListener("mousedown", slider3.dragStart);
+slider3.carousel.addEventListener("touchstart", slider3.dragStart);
+
+slider3.carousel.addEventListener("mousemove", slider3.dragging);
+slider3.carousel.addEventListener("touchmove", slider3.dragging);
+
+slider3.carousel.addEventListener("mouseup", slider3.dragStop);
+
+slider3.carousel.addEventListener("mouseleave", slider3.dragStop);
+slider3.carousel.addEventListener("touchend", slider3.dragStop);
+
+slider3.imgELs.forEach(imgELs => {
+    imgELs.addEventListener('click', () => {
+        console.log("click2");
+        slider3.sliderParent.querySelector('.active')?.classList.remove('active');
+    imgELs.classList.add('active')   
+});
+}); 
+
+const sliderParent4 = document.getElementById("sliderParent4")
+const slider4 = new Slider(sliderParent4)
+
+slider4.arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        slider4.carousel.scrollLeft += icon.id == "left" ? -slider4.firstImgWidth : slider4.firstImgWidth;
+        
+    });
+});
+
+
+slider4.carousel.addEventListener("mousedown", slider4.dragStart);
+slider4.carousel.addEventListener("touchstart", slider4.dragStart);
+
+slider4.carousel.addEventListener("mousemove", slider4.dragging);
+slider4.carousel.addEventListener("touchmove", slider4.dragging);
+
+slider4.carousel.addEventListener("mouseup", slider4.dragStop);
+
+slider4.carousel.addEventListener("mouseleave", slider4.dragStop);
+slider4.carousel.addEventListener("touchend", slider4.dragStop);
+
+slider4.imgELs.forEach(imgELs => {
+    imgELs.addEventListener('click', () => {
+        console.log("click2");
+        slider4.sliderParent.querySelector('.active')?.classList.remove('active');
+    imgELs.classList.add('active')   
+});
+}); 
