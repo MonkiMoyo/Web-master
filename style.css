@@ -157,6 +157,7 @@ p{
 }
 
 .wrapper .carousel{
+    display: block;
     white-space: nowrap;
     cursor: pointer;
     overflow: hidden;
@@ -202,6 +203,7 @@ p{
     margin-left: 14px;
     width: calc(100% /3);
     border: solid 2px var(--secondary-color);
+    z-index: -1;
 }
 
 .carousel:first-child{
@@ -238,13 +240,38 @@ p{
     scroll-behavior: smooth;
 }
 
+.changehover{
+    display: contents;
+    position: relative;
+}
 
-
-.active:hover{
-    background: center / contain no-repeat url(./png/CTA.png);
+.CTA {
+    position: absolute;
+    top: 50%;
+    left: 42.5%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--active-color);
+    opacity: 0;
+    z-index: 1;
+    border: 2px solid var(--secondary-color); 
+    padding: 7px;
 }
 
 
-.none-active:hover{
-    filter: blur(0px);
+.CTA a{
+     color: var(--active-color);
+     text-decoration: none;
 }
+
+
+  .CTA:hover{
+    opacity: 1;
+}
+
+
+
+
+
+
+
