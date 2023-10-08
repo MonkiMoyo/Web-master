@@ -152,12 +152,12 @@ p{
 }
 
 
-.wrapper{
+.wrapper .changehover{
     max-width: 1200px;
+    position: relative;
 }
 
 .wrapper .carousel{
-    display: block;
     white-space: nowrap;
     cursor: pointer;
     overflow: hidden;
@@ -197,14 +197,18 @@ p{
 }
 
 
-.carousel img {
+.carousel img{
     height: 300px;
     object-fit:cover;
     margin-left: 14px;
-    width: calc(100% /3);
-    border: solid 2px var(--secondary-color);
-    z-index: -1;
 }
+
+
+
+.none-active {
+    border: solid 2px var(--secondary-color);
+}
+ 
 
 .carousel:first-child{
     margin-left: 0px;
@@ -240,33 +244,30 @@ p{
     scroll-behavior: smooth;
 }
 
-.changehover{
-    display: contents;
-    position: relative;
-}
 
-.CTA {
-    position: absolute;
-    top: 50%;
-    left: 42.5%;
+
+.CTA{
     background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 5px;
-    color: var(--active-color);
-    opacity: 0;
-    z-index: 1;
-    border: 2px solid var(--secondary-color); 
-    padding: 7px;
-}
+    padding: 5px;
 
+}
 
 .CTA a{
-     color: var(--active-color);
-     text-decoration: none;
+    text-decoration: none;
+        color: var(--active-color);
+
 }
 
+img.none-active.active:hover{
+    filter: sepia(2);
+    scale: 120%;
+    mask-image: url(/png/CTA.png);
+}
 
-  .CTA:hover{
-    opacity: 1;
+.changehover {
+    display: contents;
 }
 
 
