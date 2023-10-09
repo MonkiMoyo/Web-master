@@ -261,8 +261,6 @@ p{
 }
 
 img.none-active.active:hover{
-    filter: sepia(2);
-    scale: 120%;
     mask-image: url(/png/CTA.png);
 }
 
@@ -270,6 +268,9 @@ img.none-active.active:hover{
     display: contents;
 }
 
+.content{
+    display: contents;
+}
 
 
 

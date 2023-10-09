@@ -10,7 +10,7 @@ class Slider{
         this.changeImg = this.sliderParent.querySelectorAll('.controls');
 
         this.prevPageX
-        this.prevScrollLeft      
+        this.prevScrollLeft   
         this.isDragStart = false, this.prevPageX, this.prevScrollLeft;
         this.firstImgWidth = this.firstImg.clientWidth + 14;
     }
@@ -35,6 +35,46 @@ class Slider{
         this.carousel.classList.remove("dragging");
     }
 
+    changeActive = () => {
+        let full = window.screen.width
+        this.imgELs.forEach((imgEl,index) =>{
+            let rectangle = imgEl.getBoundingClientRect();
+            let boxposition = rectangle.x / full
+            if (0.45 < boxposition < 0.55){
+                this.sliderParent.querySelector('.active')?.classList.remove('active');
+                imgEl.classList.add('active')
+            }
+
+        })
+
+    }
+
+    changeActiveEnd = () => {
+        let length = this.imgELs.length
+        let full = window.screen.width
+        let rectanglestart = this.imgELs[0].getBoundingClientRect();
+        let boxpositionstart = rectanglestart.x / full
+        if(0.003 < boxpositionstart && boxpositionstart < 0.1){
+            console.log("start")
+            
+            this.sliderParent.querySelector('.active')?.classList.remove('active');
+            this.imgELs[0].classList.add('active')
+            return true
+        } 
+
+        let rectangleend = this.imgELs[length-1].getBoundingClientRect();
+        let boxpositionend = rectangleend.x / full
+        if(0.64< boxpositionend && boxpositionend < 0.7){
+            console.log("end")
+            this.sliderParent.querySelector('.active')?.classList.remove('active');
+            this.imgELs[length-1].classList.add('active')
+            return true
+        } 
+        return false
+    }
+
+    
+
 }
 
 const sliderParent1 = document.getElementById("sliderParent1")
@@ -43,6 +83,14 @@ const slider1 = new Slider(sliderParent1)
 slider1.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider1.carousel.scrollLeft += icon.id == "left" ? -slider1.firstImgWidth : slider1.firstImgWidth;
+        
+        if (!slider1.changeActiveEnd) {
+            slider1.changeActive
+        }
+        else{
+            console.log("KLIK")
+        }
+        
         
     });
 });
@@ -59,9 +107,15 @@ slider1.carousel.addEventListener("mouseup", slider1.dragStop);
 slider1.carousel.addEventListener("mouseleave", slider1.dragStop);
 slider1.carousel.addEventListener("touchend", slider1.dragStop);
 
+
+slider1.carousel.addEventListener("mousemove", slider1.changeActive);
+slider1.carousel.addEventListener("touchmove", slider1.changeActive);
+slider1.carousel.addEventListener("mouseleave", slider1.changeActiveEnd);
+slider1.carousel.addEventListener("touchend", slider1.changeActiveEnd);
+
+
 slider1.imgELs.forEach(imgELs => {
     imgELs.addEventListener('click', () => {
-        console.log("click1");
         slider1.sliderParent.querySelector('.active')?.classList.remove('active');
     imgELs.classList.add('active')   
 });
@@ -91,6 +145,11 @@ slider2.carousel.addEventListener("mouseup", slider2.dragStop);
 slider2.carousel.addEventListener("mouseleave", slider2.dragStop);
 slider2.carousel.addEventListener("touchend", slider2.dragStop);
 
+slider2.carousel.addEventListener("mousemove", slider2.changeActive);
+slider2.carousel.addEventListener("touchmove", slider2.changeActive);
+slider2.carousel.addEventListener("mouseleave", slider2.changeActiveEnd);
+slider2.carousel.addEventListener("touchend", slider2.changeActiveEnd);
+
 slider2.imgELs.forEach(imgELs => {
     imgELs.addEventListener('click', () => {
         console.log("click2");
@@ -119,6 +178,11 @@ slider3.carousel.addEventListener("mouseup", slider3.dragStop);
 
 slider3.carousel.addEventListener("mouseleave", slider3.dragStop);
 slider3.carousel.addEventListener("touchend", slider3.dragStop);
+
+slider3.carousel.addEventListener("mousemove", slider3.changeActive);
+slider3.carousel.addEventListener("touchmove", slider3.changeActive);
+slider3.carousel.addEventListener("mouseleave", slider3.changeActiveEnd);
+slider3.carousel.addEventListener("touchend", slider3.changeActiveEnd);
 
 slider3.imgELs.forEach(imgELs => {
     imgELs.addEventListener('click', () => {
@@ -150,9 +214,13 @@ slider4.carousel.addEventListener("mouseup", slider4.dragStop);
 slider4.carousel.addEventListener("mouseleave", slider4.dragStop);
 slider4.carousel.addEventListener("touchend", slider4.dragStop);
 
+slider4.carousel.addEventListener("mousemove", slider4.changeActive);
+slider4.carousel.addEventListener("touchmove", slider4.changeActive);
+slider4.carousel.addEventListener("mouseleave", slider4.changeActiveEnd);
+slider4.carousel.addEventListener("touchend", slider4.changeActiveEnd);
+
 slider4.imgELs.forEach(imgELs => {
     imgELs.addEventListener('click', () => {
-        console.log("click2");
         slider4.sliderParent.querySelector('.active')?.classList.remove('active');
     imgELs.classList.add('active')   
 });
