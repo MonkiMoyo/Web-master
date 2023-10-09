@@ -40,7 +40,7 @@ class Slider{
         this.imgELs.forEach((imgEl,index) =>{
             let rectangle = imgEl.getBoundingClientRect();
             let boxposition = rectangle.x / full
-            if (0.45 < boxposition < 0.55){
+            if (0.40 < boxposition && boxposition < 0.80){
                 this.sliderParent.querySelector('.active')?.classList.remove('active');
                 imgEl.classList.add('active')
             }
@@ -55,8 +55,6 @@ class Slider{
         let rectanglestart = this.imgELs[0].getBoundingClientRect();
         let boxpositionstart = rectanglestart.x / full
         if(0.003 < boxpositionstart && boxpositionstart < 0.1){
-            console.log("start")
-            
             this.sliderParent.querySelector('.active')?.classList.remove('active');
             this.imgELs[0].classList.add('active')
             return true
@@ -65,7 +63,6 @@ class Slider{
         let rectangleend = this.imgELs[length-1].getBoundingClientRect();
         let boxpositionend = rectangleend.x / full
         if(0.64< boxpositionend && boxpositionend < 0.7){
-            console.log("end")
             this.sliderParent.querySelector('.active')?.classList.remove('active');
             this.imgELs[length-1].classList.add('active')
             return true
@@ -83,12 +80,10 @@ const slider1 = new Slider(sliderParent1)
 slider1.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider1.carousel.scrollLeft += icon.id == "left" ? -slider1.firstImgWidth : slider1.firstImgWidth;
-        
-        if (!slider1.changeActiveEnd) {
-            slider1.changeActive
-        }
-        else{
-            console.log("KLIK")
+        var checkend = slider1.changeActiveEnd()
+        console.log(checkend)
+        if ( checkend == false) {
+            slider1.changeActive()
         }
         
         
