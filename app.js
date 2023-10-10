@@ -155,6 +155,11 @@ const slider2 = new Slider(sliderParent2)
 slider2.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider2.carousel.scrollLeft += icon.id == "left" ? -slider2.firstImgWidth : slider2.firstImgWidth;
+        slider2.checkend = slider2.changeActiveEnd()
+        if ( slider2.checkend == false) {
+             icon.id == "left" ? slider2.changeActiveLeft() : slider2.changeActiveRight()
+        }
+        
         
     });
 });
@@ -189,10 +194,14 @@ const slider3 = new Slider(sliderParent3)
 slider3.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider3.carousel.scrollLeft += icon.id == "left" ? -slider3.firstImgWidth : slider3.firstImgWidth;
+        slider3.checkend = slider3.changeActiveEnd()
+        if ( slider3.checkend == false) {
+             icon.id == "left" ? slider3.changeActiveLeft() : slider3.changeActiveRight()
+        }
+        
         
     });
 });
-
 
 slider3.carousel.addEventListener("mousedown", slider3.dragStart);
 slider3.carousel.addEventListener("touchstart", slider3.dragStart);
@@ -224,6 +233,11 @@ const slider4 = new Slider(sliderParent4)
 slider4.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider4.carousel.scrollLeft += icon.id == "left" ? -slider4.firstImgWidth : slider4.firstImgWidth;
+        slider4.checkend = slider4.changeActiveEnd()
+        if ( slider4.checkend == false) {
+             icon.id == "left" ? slider4.changeActiveLeft() : slider4.changeActiveRight()
+        }
+        
         
     });
 });
