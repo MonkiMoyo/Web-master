@@ -51,7 +51,6 @@ header{
 
 .font-footer-size{
     font-size: 0.9rem;
-    line-height: 0.5em;
 }
 
 
@@ -272,7 +271,13 @@ img.none-active.active:hover{
     display: contents;
 }
 
+/*DESKTOP VERSIONEN*/
 
+/*NAVBAR*/
+
+.navbar-brand{
+    color: var(--secondary-color);
+}
 
 /* Unterseiten */
 
@@ -294,4 +299,13 @@ p {
     margin-bottom: 2vh;
 }
 
+.col-margin {
+    margin: 1vh;
+}
 
+
+.img-fluid {
+    object-fit: cover;
+    height: 70vh;
+    width: 300vw;
+}
