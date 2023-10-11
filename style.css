@@ -274,6 +274,19 @@ img.none-active.active:hover{
 
 
 
+/* Unterseiten */
 
+p {
+    font-size: 2rem;
+    color: var(--active-color);
+}
+
+.container-sm p {
+    font-size: 1rem ;
+} 
+
+.border-img{
+    border: 2px solid var(--secondary-color);
+}
 
 
