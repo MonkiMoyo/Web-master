@@ -10,9 +10,10 @@ class Slider{
         this.changeImg = this.sliderParent.querySelectorAll('.controls');
 
         this.prevPageX
-        this.prevScrollLeft   
+        this.prevScrollLeft  
+        this.checkend = false 
         this.isDragStart = false, this.prevPageX, this.prevScrollLeft;
-        this.firstImgWidth = this.firstImg.clientWidth + 14;
+        this.firstImgWidth = this.firstImg.clientWidth + 18;
     }
 
 
@@ -40,7 +41,7 @@ class Slider{
         this.imgELs.forEach((imgEl,index) =>{
             let rectangle = imgEl.getBoundingClientRect();
             let boxposition = rectangle.x / full
-            if (0.40 < boxposition && boxposition < 0.80){
+            if (0.25< boxposition && boxposition < 0.75){
                 this.sliderParent.querySelector('.active')?.classList.remove('active');
                 imgEl.classList.add('active')
             }
@@ -49,7 +50,38 @@ class Slider{
 
     }
 
+    changeActiveRight = () => {
+        let full = window.screen.width
+        this.imgELs.forEach((imgEl,index) =>{
+            let rectangle = imgEl.getBoundingClientRect();
+            let boxposition = rectangle.x / full
+            if (0< boxposition && boxposition < 0.60){
+                this.sliderParent.querySelector('.active')?.classList.remove('active');
+                imgEl.classList.add('active')
+            }
+
+        })
+
+    }
+    
+    changeActiveLeft = () => {
+        let full = window.screen.width
+        this.imgELs.forEach((imgEl,index) =>{
+
+            let rectangle = imgEl.getBoundingClientRect();
+            let boxposition = rectangle.x / full
+            if (0< boxposition && boxposition < 0.25){
+                this.sliderParent.querySelector('.active')?.classList.remove('active');
+                imgEl.classList.add('active')
+            }
+
+        })
+
+    }
+
+
     changeActiveEnd = () => {
+        if(this.checkend == true) return false
         let length = this.imgELs.length
         let full = window.screen.width
         let rectanglestart = this.imgELs[0].getBoundingClientRect();
@@ -80,10 +112,9 @@ const slider1 = new Slider(sliderParent1)
 slider1.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider1.carousel.scrollLeft += icon.id == "left" ? -slider1.firstImgWidth : slider1.firstImgWidth;
-        var checkend = slider1.changeActiveEnd()
-        console.log(checkend)
-        if ( checkend == false) {
-            slider1.changeActive()
+        slider1.checkend = slider1.changeActiveEnd()
+        if ( slider1.checkend == false) {
+             icon.id == "left" ? slider1.changeActiveLeft() : slider1.changeActiveRight()
         }
         
         
@@ -124,6 +155,11 @@ const slider2 = new Slider(sliderParent2)
 slider2.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider2.carousel.scrollLeft += icon.id == "left" ? -slider2.firstImgWidth : slider2.firstImgWidth;
+        slider2.checkend = slider2.changeActiveEnd()
+        if ( slider2.checkend == false) {
+             icon.id == "left" ? slider2.changeActiveLeft() : slider2.changeActiveRight()
+        }
+        
         
     });
 });
@@ -158,10 +194,14 @@ const slider3 = new Slider(sliderParent3)
 slider3.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider3.carousel.scrollLeft += icon.id == "left" ? -slider3.firstImgWidth : slider3.firstImgWidth;
+        slider3.checkend = slider3.changeActiveEnd()
+        if ( slider3.checkend == false) {
+             icon.id == "left" ? slider3.changeActiveLeft() : slider3.changeActiveRight()
+        }
+        
         
     });
 });
-
 
 slider3.carousel.addEventListener("mousedown", slider3.dragStart);
 slider3.carousel.addEventListener("touchstart", slider3.dragStart);
@@ -193,6 +233,11 @@ const slider4 = new Slider(sliderParent4)
 slider4.arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
         slider4.carousel.scrollLeft += icon.id == "left" ? -slider4.firstImgWidth : slider4.firstImgWidth;
+        slider4.checkend = slider4.changeActiveEnd()
+        if ( slider4.checkend == false) {
+             icon.id == "left" ? slider4.changeActiveLeft() : slider4.changeActiveRight()
+        }
+        
         
     });
 });
