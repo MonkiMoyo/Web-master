@@ -273,9 +273,6 @@ p{
 
 }
 
-img.none-active.active:hover{
-    mask-image: url(/png/CTA.png);
-}
 
 .changehover {
     display: contents;
@@ -372,3 +369,6 @@ label {
 .impressum{
     max-width: 100%;
 }
+
+
+/*cursor*/

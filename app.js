@@ -267,9 +267,15 @@ slider4.imgELs.forEach(imgELs => {
 }); 
 
 const navItem = document.querySelectorAll('.nav-link');
+const logo = document.querySelector('.navbar-brand')
 
 navItem.forEach(navItem => {
     navItem.addEventListener('click', () => {
     document.querySelector('.active')?.classList.remove('active')
     navItem.classList.add('active')   
 })})
+
+    logo.addEventListener('click', () => {
+    document.querySelector('.active')?.classList.remove('active')
+})
+
