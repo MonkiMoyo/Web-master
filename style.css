@@ -14,8 +14,11 @@
     justify-content: flex-end;
 }
 
-header{
-    position: sticky;
+nav{
+    background-color: var(--primary-color);
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: var(--active-color);
 }
 
 .navbar-dark, .navbar[data-bs-theme=dark] {
@@ -43,6 +46,9 @@ header{
 .nav-link:active {
     color: var(--active-color);
 }
+.nav-link:focus {
+    color: var(--active-color);
+}
 
 .nav-link:hover {
     color: var(--active-color);
@@ -61,6 +67,7 @@ header{
 .nav-link{
     font-size: calc(0.8rem + 0.6vw);
 }
+
 
 .navbar-toggler:focus,
 .navbar-toggler:active,
@@ -325,10 +332,6 @@ p {
 
 
 
-.border-img:hover{
-    filter: blur(2px);
-}
-
 .caption{
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -343,4 +346,29 @@ p {
     object-fit: cover;
     height: 70vh;
     width: 300vw;
+}
+
+
+/*Contact*/
+
+.btn-primary{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--secondary-color) ;
+}
+.btn-primary:hover{
+    background-color: var(--primary-color);
+    color: var(--active-color);
+    border-color: var(--secondary-color) ;
+}
+
+label {
+    color: var(--secondary-color);
+}
+
+
+/*Impressum*/
+
+.impressum{
+    max-width: 100%;
 }

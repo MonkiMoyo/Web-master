@@ -265,3 +265,11 @@ slider4.imgELs.forEach(imgELs => {
     imgELs.classList.add('active')   
 });
 }); 
+
+const navItem = document.querySelectorAll('.nav-link');
+
+navItem.forEach(navItem => {
+    navItem.addEventListener('click', () => {
+    document.querySelector('.active')?.classList.remove('active')
+    navItem.classList.add('active')   
+})})
