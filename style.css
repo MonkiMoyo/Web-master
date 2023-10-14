@@ -258,39 +258,19 @@ p{
 }
 
 
-
-.CTA{
-    background-color: var(--primary-color);
-    border: 2px solid var(--secondary-color);
-    border-radius: 5px;
-    padding: 5px;
-
-}
-
-.CTA a{
-    text-decoration: none;
-        color: var(--active-color);
-
-}
-
-
-.changehover {
-    display: contents;
-}
-
 .content{
     display: contents;
 }
 
 /*DESKTOP VERSIONEN*/
 
-#textFlow, #fotos, #video, #illustrationen, #graffiti{
+#textFlow, #fotos, #video, #illustrationen, #graffiti, #headline{
     font-size: calc(0.8rem + 0.6vw);
 }
 
-.small{
-    height: 30vh;
-    margin-top: 5vh;
+.cut-img{
+    height: 20vh;
+    object-fit: cover;
 }
 
 /*NAVBAR*/
@@ -309,6 +289,39 @@ p{
     height: 50vh;
     padding: 0px;
 }
+.img-container{
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.img-overlay{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.img-overlay:hover{
+    backdrop-filter: blur(2px);
+    opacity: 1;
+}
+
+.button{
+    color: var(--active-color);
+    width: 200px;
+    height: 40px;
+    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 7px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;}
 
 /*  --------- */
 
@@ -341,7 +354,12 @@ p {
 
 .img-fluid {
     object-fit: cover;
-    height: 70vh;
+    height: calc(300vw / 15);
+    width: 300vw;
+}
+.img-fluid-2 {
+    object-fit: cover;
+    height: calc(300vw / 8);
     width: 300vw;
 }
 
