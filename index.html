@@ -9,7 +9,7 @@
     <script src="app.js" defer></script>
     <title>Document</title>
 </head>
-<body class="container-sm container-md  container-l  container-xl container-xxl ">
+<body class="container-sm container-md  container-l container-lg container-xl container-xxl ">
     <header role="header">        
       <nav class="navbar navbar-expand-lg d-dm-none">
         <div class="container-fluid">
@@ -22,22 +22,22 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Fotos</a>
+                <a class="nav-link" aria-current="page" href="#fotos">Fotos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Video</a>
+                <a class="nav-link" href="#video">Video</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Illustrationen</a>
+                <a class="nav-link" href="#illustrationen">Illustrationen</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Graffiti</a>
+                <a class="nav-link" href="#graffiti">Graffiti</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link font-footer-size" href="#impressum">Impressum</a>
+                <a class="nav-link" id="font-footer-size" href="#impressum">Impressum</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link font-footer-size" href="#kontakt">Kontakt</a>
+                <a class="nav-link"  id="font-footer-size" href="#kontakt">Kontakt</a>
               </li>
             </ul>
           </div>
@@ -56,16 +56,18 @@
           </div>
 
           <!-- DESKTOP -->
-          <div class="d-none d-sm-none d-md-block">
+          <div class="d-none d-xs-none d-sm-none d-md-flex">
           <div class="container-l container-lg container-md container-xl container-xxl">
-            <div class="row align-items-start gx-2  gy-2">
+            <div class="line">
+            <div class="row align-items-start gx-4  gy-2">
               <div class="col">
                 <img src="./png/ich-lg.png" id="img-lg" class="img-fluid img-lg" alt="ich">
               </div>
-              <div class="col">
-                <p>Moin, zwischen den wilden Multimedia Mainstreams befinde ich mich am liebsten im Urbanen vierteln. Sie geben mir einen nostalgischen Vibe. Vielleicht tun sie es ja auch für dich, schau doch mal rein. </p>
+              <div class="col align-self-center">
+                <p id="textFlow">Moin, zwischen den wilden Multimedia Mainstreams befinde ich mich am liebsten im Urbanen vierteln. Sie geben mir einen nostalgischen Vibe. Vielleicht tun sie es ja auch für dich, schau doch mal rein. </p>
               </div>
             </div>
+          </div>
           </div>
 
 
@@ -75,13 +77,25 @@
     </header>
     <main>
       
-      <div class="container-sm ">
-          <p id="fotos" class="h3">Fotos</p>
-          <div class=" d-sm-none container-lg container-xl container-xxl">
 
-
-
+          <p id="fotos" class="h3 container-fluid">Fotos</p>
+          <div class="d-none d-xs-none d-md-block container-lg container-md container-xl container-xxl">
+          <div class="row gx-4 gy-4 g-2">
+            <div>
+              <a href="rotes-licht.html">
+            <img src="./png/Gang.webp" class="img-fluid border-img"  alt="sekte">
+          </a>
           </div>
+            <div class="col-8">
+              <img src="./png/nave.png" class="img-fluid border-img"  alt="sekte">
+
+            </div>
+            <div class="col-4 ">
+              <img src="./png/Nave_2_Rotes-licht.png" class="img-fluid border-img"  alt="sekte">
+            </div>
+          </div>
+          </div>
+
 
         <!--- Mobile -->
           <div id="sliderParent1" class="wrapper d-md-none d-lg-none d-xxl-none">
@@ -104,11 +118,27 @@
             <img id="right" class="controls" src="./svg/arrow_right.svg">
           </div>
         </div>
-        <!--- Mobile -->
-        
-        <div class="container-sm">
-          <p id="video" class="h3">Video</p>
 
+        
+
+          <p id="video" class="h3 container-fluid">Video</p>
+          <div class="d-none d-xs-none d-md-block container-lg container-md container-xl container-xxl">
+            <div class="row gx-4 gy-4 g-2">
+              <div>
+              <img src="./png/Gang.webp" class="img-fluid border-img"  alt="sekte">
+            </div>
+              <div class="col">
+                <img src="./png/nave.png" class="img-fluid border-img"  alt="sekte">
+  
+              </div>
+  
+  
+  
+  
+            </div>
+  
+  
+            </div>
 
          <!--- Mobile -->
          
@@ -126,11 +156,33 @@
             <img id="right" class="controls" src="./svg/arrow_right.svg">
           </div>
         </div>
-        <div class="container-sm">
-          <p id="illustrationen" class="h3">Illustrationen</p>
+        
+          <p id="illustrationen" class="h3 container-fluid">Illustrationen</p>
+          <div class="d-none d-xs-none d-md-block container-lg container-md container-xl container-xxl">
+            <div class="row gx-4 gy-4 g-2">
+              <div>
+              <img src="./png/Jasmin design_Tshirt.png" class="img-fluid border-img"  alt="sekte">
+            </div>
+              <div class="col">
+                <img src="./png/Tshirt_Car_1_Design.png" class="img-fluid border-img"  alt="sekte">
+  
+              </div>
+              <div class="col">
+                <img src="./png/Tshirt_Car_2_Design.png" class="img-fluid border-img"  alt="sekte">
+  
+              </div>
+              <div>
+                <img src="./png/Hourglass.png" class="img-fluid border-img"  alt="sekte">
+              </div>
+  
+  
+  
+            </div>
+  
+  
+            </div>
 
-
-          
+           <!--- Mobile -->
           <div id="sliderParent3" class="wrapper d-md-none d-lg-none d-xxl-none">
             <img id="left" class="controls" src="./svg/arrow_left.svg">
             <div  id="carousel" class="carousel slide">
@@ -146,10 +198,30 @@
           </div>
         </div>
 
-        <!--- Mobile -->
+       
 
-        <div class="container-sm">
-          <p id="graffiti" class="h3">Graffiti</p>
+          <p id="graffiti" class="h3 container-fluid">Graffiti</p>
+          <div class="d-none d-xs-none d-md-block container-lg container-md container-xl container-xxl">
+            <div class="row g-2 gy-4">
+              <div class="col-10">
+              <img src="./png/Rotes_Graffiti_Phoe.png" class="img-fluid border-img"  alt="sekte">
+            </div>
+              <div class="col ">
+                <img src="./png/Phoe_Graffiti_1.png" class="img-fluid border-img"  alt="sekte">
+  
+              </div>
+              <div class="col ">
+                <img src="./png/Phoe_Graffiti_2.png" class="img-fluid border-img"  alt="sekte">
+  
+              </div>
+  
+  
+  
+  
+            </div>
+  
+  
+            </div>
 
 
         <!--- Mobile -->
