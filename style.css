@@ -279,6 +279,16 @@ img.none-active.active:hover{
     color: var(--secondary-color);
 }
 
+#img-lg{
+    width: 50vw;
+    height: 50vh;
+    border-right: 2px solid var(--secondary-color);
+    border-left: 2px solid var(--secondary-color);
+
+}
+
+/*  --------- */
+
 /* Unterseiten */
 
 p {
