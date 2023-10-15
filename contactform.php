@@ -2,7 +2,7 @@
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $mailFrom = $_POST['mail'];
-    $message = $_POST['name'];
+    $message = $_POST['message'];
 
     $mailTo = "admin@lea-kretzer.com";
     $headers = "From: ".$mailFrom;
@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 
 
 mail($mailTo, $txt, $headers);
-header("Location: index.html?mailsend");
+header("Location: kontakt.html?mailsend");
 }
 
 
