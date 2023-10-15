@@ -387,6 +387,12 @@ label {
     color: var(--secondary-color);
 }
 
+.Linkedin-logo{
+    height: 5vh;
+}
+.Linkedin-logo:hover{
+    opacity: 50%;
+}
 
 /*Impressum*/
 
@@ -395,7 +401,10 @@ label {
 }
 
 
-/*cursor*/
-
-
-/* Controls */
+.Logo-resize{
+    height: 20vh;
+    width: auto;
+}
+.Logo-resize:hover{
+opacity: 50%;
+}
