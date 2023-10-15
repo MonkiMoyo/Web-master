@@ -38,7 +38,9 @@ nav{
     align-items: center;
 }
 
-
+.navbar {
+    --bs-navbar-nav-link-padding-x: 1rem;
+}
 .nav-link {
     color: var(--secondary-color);
     transition: none;
